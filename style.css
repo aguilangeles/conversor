@@ -1,0 +1,25 @@
+h2{
+	text-align: center;
+}
+p{
+	padding: 10px;
+}
+.cotizar{
+	border : 2px solid white;
+	background-color: rgba(228, 198, 220, 0.73);
+	min-height: 350px;
+}
+.compra, .venta{
+	margin-top: 20px;
+}
+
+.compra label{
+	padding-right: 40px;
+}
+ .venta label{
+	padding-right: 54px;
+}
+
+ .dolar label{
+	padding-right: 70px;
+}
