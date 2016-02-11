@@ -11,4 +11,5 @@ for(var i = 0; i < array.length; i++) {
 }
 };
 
-popularSelect(paises, 'CuisineList');
+popularSelect(paises, 'paisOrigen');
+popularSelect(paises, 'paisDestino');
