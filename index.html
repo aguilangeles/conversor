@@ -25,29 +25,36 @@
 			<br>
 		</div>
 		<div class="col-md-6">
-		<label for="">Actualmente tengo</label>
+		<label for="">Moneda actual</label>
+
 		<select class="form-control" id="paisOrigen">
 		</select>
 		<br>
 		<br>
+		<div class="form-group">
+			<input type="text" class="form-control" id="inputOrigen" disabled>
+		</div>
     <div class="form-group">
-      <label for="usr">Monto:</label>
+      <label for="usr">Cantidad:</label>
      
-      <input type="num" class="form-control" id="ingreso">
+      <input type="number" class="form-control" id="ingreso" required=" " oninvalid="this.setCustomValidity('NOOOOOOOOOOOOO')">
     </div>
         <div class="form-group">
     	<a href="javascript:mostrarSeleccion(paisOrigen, paisDestino)" class="btn btn-default btn-sm  pull-right">Resultado</a>
     </div>
 		</div>
 		<div class="col-md-6">
-		<label for="">Y quiero convertirlo a</label>
+		<label for="">...convertir moneda a...</label>
 		<select class="form-control" id="paisDestino">
 		</select>
 		<br>
 		<br>
+		<div class="form-group">
+			<input type="text" class="form-control" id="inputDestino" disabled>
+		</div>
     <div class="form-group">
       <label for="usr">Resultado:</label>
-      <input type="num" class="form-control" id="egreso">
+      <input type="number" class="form-control" id="egreso" disabled>
     </div>
 
 		</div>
