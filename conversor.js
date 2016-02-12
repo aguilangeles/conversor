@@ -13,3 +13,20 @@ for(var i = 0; i < array.length; i++) {
 
 popularSelect(paises, 'paisOrigen');
 popularSelect(paises, 'paisDestino');
+
+
+function mostrarSeleccion(aSelect, bSelect){
+var origen = seleccion(aSelect);
+var destino = seleccion(bSelect);
+
+console.log('pais de origen '+origen);
+console.log('pais de destino '+destino);
+
+
+}
+function seleccion(select){
+	var resultado;
+	var e = document.getElementById(select.id);
+	resultado = e.options[e.selectedIndex].value;
+	return resultado;
+}
