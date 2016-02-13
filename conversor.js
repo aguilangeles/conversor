@@ -1,6 +1,10 @@
 //tengo un severo problema para buscar nombres buenos
 var paises=["AR", "BR", "BL","UY", "US"];
-var todoslospaises={
+
+var comboOrigen='paisOrigen';
+var comboDestino='paisDestino';
+
+var listadoPaises={
 	AR:{
 		AR:1,
 		BR:0.27262,
@@ -40,7 +44,7 @@ var todoslospaises={
 
 }
 
-function popularSelect(array, elementbyid){
+function rellenarCombo(array, elementbyid){
 	var sel = document.getElementById(elementbyid);
 	for(var i = 0; i < array.length; i++) {
 		var opt = document.createElement('option');
@@ -49,38 +53,46 @@ function popularSelect(array, elementbyid){
 		sel.appendChild(opt);
 	}
 };
+
+
 //cargo los selects
-popularSelect(paises, 'paisOrigen');
-popularSelect(paises, 'paisDestino');
+rellenarCombo(paises, comboOrigen);
+rellenarCombo(paises, comboDestino);
 
 //muestro que seleccione y los valores que se van a calcular
-function mostrarSeleccion(aSelect, bSelect){
-var origen = seleccion(aSelect);
-var destino = seleccion(bSelect);
+function mostrarSeleccion(){
 
-var input = document.getElementById('ingreso').value;
-mostrarValorUnidad(origen,destino,todoslospaises, input);
+var origen = seleccionCombo(comboOrigen);
+var destino = seleccionCombo(comboDestino);
+
+var valorIngresado = document.getElementById('ingreso').value;
+
+
+mostrarValorUnidad(origen,destino,listadoPaises, valorIngresado);
+
 }
 
-function seleccion(select){
-	var resultado;
-	var e = document.getElementById(select.id);
-	resultado = e.options[e.selectedIndex].value;
-	return resultado;
-}
-
-function mostrarValorUnidad(a,b,paises,input){
+function seleccionCombo(select){
 	
-	var origen = paises[a];
-	console.log(origen);
+	var e = document.getElementById(select);
+	//console.log('seleccion '+e);
+	return e.options[e.selectedIndex].value;
+}
 
-	var destino = origen[b];
-	console.log(destino);
 
-	document.getElementById('inputOrigen').value=origen[a];
+function mostrarValorUnidad(seleccionOrigen, seleccionDestino, paises, valorIngresado){
+	
+	var origen = paises[seleccionOrigen];	
+
+	var destino = origen[seleccionDestino];
+
+	var destinoValor = origen[seleccionOrigen];
+	
+
+	document.getElementById('inputOrigen').value=destinoValor;
 	document.getElementById('inputDestino').value=destino;
 
-	var calculo = input*destino;
+	var calculo = valorIngresado * destino;
  
  	document.getElementById('egreso').value=calculo;
 
