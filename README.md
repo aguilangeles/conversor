@@ -1,2 +1,2 @@
 # conversor
-Ejercicio Conversor de monedas para fullstack CoderHouse
+Ejercicio: crear un conversor de monedas en Bootstrap y con JS para el curso de  Fullstack Developer de  CoderHouse
