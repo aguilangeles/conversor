@@ -1,193 +1,197 @@
-
- var paises=["AR", "BR", "BL","UY", "US"];
-
-	
+/**
+listado de paises
+**/
 
 var rates = {
-   "AED": 3.672794,
-   "AFN": 64.620002,
-   "ALL": 126.8491,
-   "AMD": 471.365,
-   "ANG": 1.788725,
-   "AOA": 135.277333,
-   "ARS": 9.523954,
-   "AUD": 1.411781,
-   "AWG": 1.793333,
-   "AZN": 1.047688,
-   "BAM": 1.784146,
-   "BBD": 2,
-   "BDT": 77.958011,
-   "BGN": 1.784021,
-   "BHD": 0.377162,
-   "BIF": 1562.85,
-   "BMD": 1,
-   "BND": 1.403505,
-   "BOB": 6.91075,
-   "BRL": 3.923699,
-   "BSD": 1,
-   "BTC": 0.0031896502,
-   "BTN": 65.192083,
-   "BWP": 10.569938,
-   "BYR": 17436.9,
-   "BZD": 1.996399,
-   "CAD": 1.319706,
-   "CDF": 927.8275,
-   "CHF": 0.990533,
-   "CLF": 0.024598,
-   "CLP": 690.632104,
-   "CNY": 6.357558,
-   "COP": 2929.321667,
-   "CRC": 535.934795,
-   "CUC": 1,
-   "CUP": 1.000175,
-   "CVE": 100.773058005,
-   "CZK": 24.73689,
-   "DJF": 177.536251,
-   "DKK": 6.805323,
-   "DOP": 45.39198,
-   "DZD": 106.90884,
-   "EEK": 14.246925,
-   "EGP": 8.030706,
-   "ERN": 15.14,
-   "ETB": 21.02661,
-   "EUR": 0.913917,
-   "FJD": 2.107617,
-   "FKP": 0.654822,
-   "GBP": 0.654822,
-   "GEL": 2.384025,
-   "GGP": 0.654822,
-   "GHS": 3.827357,
-   "GIP": 0.654822,
-   "GMD": 38.95063,
-   "GNF": 7403.200049,
-   "GTQ": 7.689381,
-   "GYD": 206.088002,
-   "HKD": 7.750042,
-   "HNL": 21.98515,
-   "HRK": 6.938796,
-   "HTG": 53.9153,
-   "HUF": 284.235597,
-   "IDR": 13633.783333,
-   "ILS": 3.879506,
-   "IMP": 0.654822,
-   "INR": 65.29562,
-   "IQD": 1138.374988,
-   "IRR": 29963.5,
-   "ISK": 129.186,
-   "JEP": 0.654822,
-   "JMD": 119.4491,
-   "JOD": 0.708978,
-   "JPY": 120.9461,
-   "KES": 101.79845,
-   "KGS": 69.198252,
-   "KHR": 4065.594976,
-   "KMF": 448.041002,
-   "KPW": 899.91,
-   "KRW": 1140.498315,
-   "KWD": 0.303092,
-   "KYD": 0.824355,
-   "KZT": 279.44429,
-   "LAK": 8153.490098,
-   "LBP": 1510.618341,
-   "LKR": 141.1137,
-   "LRD": 83.830002,
-   "LSL": 13.787588,
-   "LTL": 3.096289,
-   "LVL": 0.633479,
-   "LYD": 1.380489,
-   "MAD": 9.855786,
-   "MDL": 20.04697,
-   "MGA": 3270.70165,
-   "MKD": 56.16067,
-   "MMK": 1285.659988,
-   "MNT": 1989.5,
-   "MOP": 7.986645,
-   "MRO": 325.30825,
-   "MTL": 0.683738,
-   "MUR": 35.8429,
-   "MVR": 15.295733,
-   "MWK": 558.03478,
-   "MXN": 16.63582,
-   "MYR": 4.322696,
-   "MZN": 42.499999,
-   "NAD": 13.78707,
-   "NGN": 198.871599,
-   "NIO": 27.30886,
-   "NOK": 8.561938,
-   "NPR": 104.3497,
-   "NZD": 1.496834,
-   "OMR": 0.384958,
-   "PAB": 1,
-   "PEN": 3.279875,
-   "PGK": 2.922275,
-   "PHP": 46.98018,
-   "PKR": 105.333101,
-   "PLN": 3.900814,
-   "PYG": 5661.463392,
-   "QAR": 3.640201,
-   "RON": 4.046937,
-   "RSD": 110.12046,
-   "RUB": 64.24264,
-   "RWF": 745.681,
-   "SAR": 3.750088,
-   "SBD": 7.915946,
-   "SCR": 13.003175,
-   "SDG": 6.094593,
-   "SEK": 8.548019,
-   "SGD": 1.404587,
-   "SHP": 0.654822,
-   "SLL": 3745.3745,
-   "SOS": 627.751878,
-   "SRD": 3.2875,
-   "STD": 22268.85,
-   "SVC": 8.767331,
-   "SYP": 188.815752,
-   "SZL": 13.78837,
-   "THB": 35.64075,
-   "TJS": 6.61035,
-   "TMT": 3.5014,
-   "TND": 2.000611,
-   "TOP": 2.212883,
-   "TRY": 2.933065,
-   "TTD": 6.352959,
-   "TWD": 32.59571,
-   "TZS": 2181.314984,
-   "UAH": 23.00742,
-   "UGX": 3556.733333,
-   "USD": 1,
-   "UYU": 29.42831,
-   "UZS": 2667.375,
-   "VEF": 6.314268,
-   "VND": 22328.483333,
-   "VUV": 111.787499,
-   "WST": 2.546946,
-   "XAF": 599.458962,
-   "XAG": 0.0624575,
-   "XAU": 0.0008685,
-   "XCD": 2.70102,
-   "XDR": 0.718074,
-   "XOF": 599.959722,
-   "XPD": 0.001459,
-   "XPF": 108.818324,
-   "XPT": 0.000989,
-   "YER": 214.986,
-   "ZAR": 13.82094,
-   "ZMK": 5253.075255,
-   "ZMW": 12.476175,
-   "ZWL": 322.387247
+	
+    "AED": 3.67306,
+    "AFN": 68.879999,
+    "ALL": 123.924199,
+    "AMD": 495.984996,
+    "ANG": 1.78875,
+    "AOA": 157.790832,
+    "ARS": 14.79605,
+    "AUD": 1.405338,
+    "AWG": 1.790083,
+    "AZN": 1.575188,
+    "BAM": 1.753541,
+    "BBD": 2,
+    "BDT": 78.54702,
+    "BGN": 1.753033,
+    "BHD": 0.37715,
+    "BIF": 1564.589976,
+    "BMD": 1,
+    "BND": 1.402466,
+    "BOB": 6.898364,
+    "BRL": 4.054221,
+    "BSD": 1,
+    "BTC": 0.002455036015,
+    "BTN": 68.300867,
+    "BWP": 11.267138,
+    "BYR": 21893.225,
+    "BZD": 1.995748,
+    "CAD": 1.385833,
+    "CDF": 926.5,
+    "CHF": 0.987245,
+    "CLF": 0.024602,
+    "CLP": 707.823999,
+    "CNY": 6.519154,
+    "COP": 3417.436696,
+    "CRC": 535.239194,
+    "CUC": 1,
+    "CUP": 1,
+    "CVE": 98.535399,
+    "CZK": 24.23146,
+    "DJF": 177.661249,
+    "DKK": 6.692369,
+    "DOP": 45.76128,
+    "DZD": 106.006501,
+    "EEK": 14.0082,
+    "EGP": 7.831185,
+    "ERN": 14.9985,
+    "ETB": 21.31751,
+    "EUR": 0.897316,
+    "FJD": 2.142233,
+    "FKP": 0.699086,
+    "GBP": 0.699086,
+    "GEL": 2.498025,
+    "GGP": 0.699086,
+    "GHS": 3.957245,
+    "GIP": 0.699086,
+    "GMD": 39.56852,
+    "GNF": 7691.210098,
+    "GTQ": 7.660277,
+    "GYD": 206.261336,
+    "HKD": 7.789494,
+    "HNL": 22.5876,
+    "HRK": 6.833726,
+    "HTG": 60.420225,
+    "HUF": 278.528701,
+    "IDR": 13431.516667,
+    "ILS": 3.900226,
+    "IMP": 0.699086,
+    "INR": 68.3843,
+    "IQD": 1088.549988,
+    "IRR": 30187.5,
+    "ISK": 127.3182,
+    "JEP": 0.699086,
+    "JMD": 121.6466,
+    "JOD": 0.708328,
+    "JPY": 114.0894,
+    "KES": 101.8198,
+    "KGS": 75.010499,
+    "KHR": 4017.844976,
+    "KMF": 441.401468,
+    "KPW": 899.91,
+    "KRW": 1215.053332,
+    "KWD": 0.298866,
+    "KYD": 0.824953,
+    "KZT": 361.367888,
+    "LAK": 8127.102598,
+    "LBP": 1509.89,
+    "LKR": 144.211199,
+    "LRD": 84.830002,
+    "LSL": 15.79935,
+    "LTL": 3.04251,
+    "LVL": 0.626325,
+    "LYD": 1.369775,
+    "MAD": 9.756041,
+    "MDL": 19.97815,
+    "MGA": 3182.443317,
+    "MKD": 55.22185,
+    "MMK": 1232.772488,
+    "MNT": 2018.5,
+    "MOP": 8.025154,
+    "MRO": 343.31375,
+    "MTL": 0.683602,
+    "MUR": 35.616663,
+    "MVR": 15.34,
+    "MWK": 745.369248,
+    "MXN": 18.88178,
+    "MYR": 4.181531,
+    "MZN": 48.489999,
+    "NAD": 15.79248,
+    "NGN": 199.052301,
+    "NIO": 28.14494,
+    "NOK": 8.624907,
+    "NPR": 109.3908,
+    "NZD": 1.520214,
+    "OMR": 0.385011,
+    "PAB": 1,
+    "PEN": 3.511989,
+    "PGK": 3.040425,
+    "PHP": 47.48709,
+    "PKR": 104.732499,
+    "PLN": 3.950355,
+    "PYG": 5803.828333,
+    "QAR": 3.641367,
+    "RON": 4.002114,
+    "RSD": 109.017901,
+    "RUB": 78.2012,
+    "RWF": 754.860257,
+    "SAR": 3.750041,
+    "SBD": 8.08541,
+    "SCR": 12.98985,
+    "SDG": 6.104096,
+    "SEK": 8.49643,
+    "SGD": 1.404139,
+    "SHP": 0.699086,
+    "SLL": 4090,
+    "SOS": 612.883003,
+    "SRD": 3.9925,
+    "STD": 21899,
+    "SVC": 8.74763,
+    "SYP": 219.804666,
+    "SZL": 15.79298,
+    "THB": 35.64473,
+    "TJS": 7.8697,
+    "TMT": 3.501467,
+    "TND": 2.01662,
+    "TOP": 2.277894,
+    "TRY": 2.969907,
+    "TTD": 6.469258,
+    "TWD": 33.23709,
+    "TZS": 2188.841683,
+    "UAH": 26.7012,
+    "UGX": 3417.406667,
+    "USD": 1,
+    "UYU": 31.81094,
+    "UZS": 2840.935059,
+    "VEF": 6.32052,
+    "VND": 22370.783333,
+    "VUV": 112.937501,
+    "WST": 2.571507,
+    "XAF": 587.798579,
+    "XAG": 0.065368,
+    "XAU": 0.000831,
+    "XCD": 2.70102,
+    "XDR": 0.715804,
+    "XOF": 593.111959,
+    "XPD": 0.001962,
+    "XPF": 107.029549,
+    "XPT": 0.001068,
+    "YER": 214.969999,
+    "ZAR": 15.79224,
+    "ZMK": 5252.024745,
+    "ZMW": 11.36495,
+    "ZWL": 322.322775
+  
 }
+/**
+nombre de los combos
+*/
+var comboOrigen='paisOrigen';
+var comboDestino='paisDestino';
 
 
+/*cargar los combos simultaneamente a  la pagina*/
+function cargarSelects() {
 
+	function cargarSelect(rates, elementbyid){
 
-	var comboOrigen='paisOrigen';
-	var comboDestino='paisDestino';
-
-	 function rellenarCombo(array, elementbyid){
-	 	console.log(array);
 		var sel = document.getElementById(elementbyid);
-		for(prop in array) {
-			
+		for(prop in rates) {
+
 			var opt = document.createElement('option');
 			opt.innerHTML = prop;
 			opt.value = prop;
@@ -195,60 +199,54 @@ var rates = {
 		}
 	};
 
-	function cargarCombos() {
-		
-		rellenarCombo(rates, comboOrigen);
-		rellenarCombo(rates, comboDestino);
-	}
-	
+	cargarSelect(rates, comboOrigen);
+	cargarSelect(rates, comboDestino);
+}
 
 
 
-	var mostrarValoresAPP = {
 
-	seleccion : function seleccionCombo(select){
+var calcularAPP = {
 
+	mostrarPaisSeleccionado : function(select){
 		var e = document.getElementById(select);
 		return e.options[e.selectedIndex].value;
 	},
 
 
-	mostrarSeleccion: function mostrarSeleccion(){
-		//cargo los selects
+	resultado: function(){
+	//cargo los selects
 
-		var origen = this.seleccion(comboOrigen);
-		console.log('seleccione' + origen);
+	var origen = this.mostrarPaisSeleccionado(comboOrigen);
 
-		var destino = this.seleccion(comboDestino);
-		console.log('seleccione destino' + destino);
 
-		var valorIngresado = document.getElementById('ingreso').value;
-		console.log('valor '+rates[destino]);
+	var destino = this.mostrarPaisSeleccionado(comboDestino);
 
-		this.mostrar(origen,destino, valorIngresado);
+
+	var valorIngresado = document.getElementById('ingreso').value;
+
+
+	this.calcularResultado(origen,destino, valorIngresado);
 
 	},
 
-	mostrar:function mostrarValorUnidad(seleccionOrigen, seleccionDestino, valorIngresado){
+	calcularResultado:function(seleccionOrigen, seleccionDestino, valorIngresado){
 
 
-	var origen = rates[seleccionOrigen];	
+		var origen = rates[seleccionOrigen];	
 
-	var destino = rates[seleccionDestino];
+		var destino = rates[seleccionDestino];
 
+		document.getElementById('inputOrigen').value=origen;
+		document.getElementById('inputDestino').value=destino;
 
-	
+		var calculo = (valorIngresado / origen) * destino;
 
-	document.getElementById('inputOrigen').value=origen;
-	document.getElementById('inputDestino').value=destino;
+		/*TODO crear la manera de invertir los combos*/
 
-	var calculo = valorIngresado * destino;
+		document.getElementById('egreso').value=calculo;
 
-	document.getElementById('egreso').value=calculo;
-
-}
-
-
+	}
 
 }
-window.APP = mostrarValoresAPP;
+window.APP = calcularAPP;
